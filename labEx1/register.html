@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 20px;
+      z-index: 999;
+      display:   
+ none; 
+    }
+  </style>
+</head>
+<body>
+  <h1>สมัครสมาชิกผู้ใช้งาน</h1>
+
+  <form id="registrationForm">
+    <h2>1. ข้อมูลส่วนตัว</h2>
+    <div>
+      <label for="firstName">ชื่อ:</label>
+      <input type="text" id="firstName" name="firstName" required>
+    </div>
+    <div>
+      <label for="lastName">นามสกุล:</label>
+      <input type="text" id="lastName" name="lastName" required>
+    </div>
+    <div>
+      <label for="email">อีเมล:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div>
+      <label for="password">รหัสผ่าน:</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+
+    <h2>2. ที่อยู่ปัจจุบัน</h2>
+    <div>
+      <label for="address">ที่อยู่:</label>
+      <textarea id="address" name="address" rows="4" required></textarea>
+    </div>
+    <div>
+      <label for="province">จังหวัด:</label>
+      <select id="province" name="province" required>
+        <option value="">เลือกจังหวัด</option>
+        <option value="กรุงเทพมหานคร">กรุงเทพมหานคร</option>
+        </select>
+    </div>
+    <div>
+      <label for="district">อำเภอ:</label>
+      <select id="district" name="district" required>
+        <option value="">เลือกอำเภอ</option>
+        <option value="คองคิง">คองคิง</option>
+        </select>
+    </div>
+    <div>
+      <label for="subdistrict">ตำบล:</label>
+      <select id="subdistrict" name="subdistrict" required>
+        <option value="">เลือกตำบล</option>
+        <option value="คองคิง">คองคิง</option>
+        </select>
+    </div>
+    <div>
+      <label for="postalCode">รหัสไปรษณีย์:</label>
+      <input type="text" id="postalCode" name="postalCode" required>
+    </div>
+
+    <div>
+      <label for="profilePicture">อัพโหลดรูปโปรไฟล์:</label>
+      <input type="file" id="profilePicture" name="profilePicture">
+    </div>
+    <div id="usernameErrorPopup" class="popup">
+      <p>การลงทะเบียนผู้ใช้งาน</p>
+      <button id="closePopup">สำเร็จ</button>
+    </div>
+  
+    <script>
+      // JavaScript สำหรับแสดงและซ่อนป๊อปอัป
+      const usernameErrorPopup = document.getElementById('usernameErrorPopup');
+      const closePopupBtn = document.getElementById('closePopup');
+  
+      // ฟังก์ชันแสดงป๊อปอัป
+      function showPopup() {
+        usernameErrorPopup.style.display = 'block';
+      }
+  
+      // ฟังก์ชันซ่อนป๊อปอัป
+      function hidePopup() {
+        usernameErrorPopup.style.display = 'none';
+      }
+  
+      // เมื่อคลิกปุ่มปิด หรือคลิกนอกป๊อปอัป ให้ซ่อนป๊อปอัป
+      closePopupBtn.addEventListener('click', hidePopup);
+      window.addEventListener('click', (event) => {
+        if (event.target === usernameErrorPopup) {
+          hidePopup();
+        }
+      });
+  
+      // ตัวอย่างการใช้ฟังก์ชันแสดงป๊อปอัป
+      if (checkUsernameAvailability(username)) {
+        showPopup();
+      }
+    </script>
+    <button type="submit">สมัครสมาชิก</button>
+    <input type="reset" id="cancel" name="cancel" value="ยกเลิก">
+    
+  </form>
+</body>
+</html>

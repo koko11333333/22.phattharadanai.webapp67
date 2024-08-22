@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    
+    <div class="container">
+        <h1>เข้าสู่ระบบผู้ใช้ทั่วไป</h1>
+        <img src="c3.png" alt="user">
+        <form>
+            <title>เข้าสู่ระบบ</title>
+            <link rel="stylesheet" href="c3.css">
+            <label for="username">ชื่อผู้ใช้:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">รหัสผ่าน:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">เข้าสู่ระบบ</button>   
+            <a href="j.html">ลงทะเบียน</a>
+        </form>
+    </div>
+    <div class="popup" id="errorPopup">
+        <h2>ข้อความจาก localhost</h2>
+        <p>เข้าสู่ระบบไม่สำเร็จ!</p>
+        <button id="closePopup">ตกลง</button>
+      </div>
+    
+      <script>
+      
+        const errorPopup = document.getElementById('errorPopup');
+        const closePopupBtn = document.getElementById('closePopup');
+        const form = document.querySelector('form');
+    
+        
+        function showPopup() {
+          errorPopup.style.display = 'block';
+        }
+    
+        
+        function hidePopup() {
+          errorPopup.style.display = 'none';
+        }
+    
+        
+        closePopupBtn.addEventListener('click', hidePopup);
+        window.addEventListener('click', (event) => {
+          if (event.target === errorPopup) {
+            hidePopup();
+          }
+        });
+    
+        
+        form.addEventListener('submit', (event) => {
+          event.preventDefault(); 
+    
+          
+          const username = document.getElementById('username').value;
+          const password = document.getElementById('password').value;
+    
+          if (username !== 'user' || password !== 'password') {
+            showPopup();
+          } else {
+           
+            console.log('เข้าสู่ระบบสำเร็จ');
+          }
+        });
+      </script>
+</body>
+</html>
