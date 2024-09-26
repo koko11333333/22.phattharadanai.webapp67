@@ -1,0 +1,129 @@
+
+body {
+    
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+    
+}
+
+
+h1{
+    text-align: center;
+    font-size: xx-large;
+    text-decoration: underline;
+    letter-spacing: 1px;
+      
+}
+th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    width: 3%;
+    background-color:#8fbc8f;
+    color: rgb(255, 255, 255);  /*ตารางบน*/
+   
+}
+tr:nth-child(even) {
+    background-color: #C5D6BA;/*แทบ*/
+}
+
+tr:hover , td:hover {
+    background-color: #d0d8ee; /*แทบสีโผล่*/
+}
+th,td{
+    border: 1px solid #ddd;
+  padding: 8px; /*ตารางกรอบ*/
+}
+table{
+    background-color: white;
+    border-collapse: collapse;
+    border-radius : 1.5px solid #2e8b57;
+    font-size: x-large;
+    text-align: center; /*ปรับให้สมดุล*/
+    width: 100%;
+    height: 70%;
+}
+
+form {
+    background-color: #ffffff;
+    border: 2px solid #8fbc8f;
+    border-radius: 10px;
+    padding: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+
+form p {
+    margin-bottom: 15px;
+}
+
+
+label {
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    color: #55682f;
+}
+
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #333;
+}
+
+
+#bun {
+    background-color: #55682f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    width: 100%;
+    margin-top: 20px;
+}
+
+
+#bun:hover {
+    background-color: #6b8e23;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 30px;
+}
+
+button {
+    background-color: #55682f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    display: inline-block;
+    width: 100%;
+    
+}
+
+
+button:hover {
+    background-color: #6b8e23;
+}
+
+
+
+
+
+
